@@ -9,6 +9,7 @@ import {
   ClipboardOutline,
   CheckmarkSharp,
   SettingsOutline,
+  AddCircleOutline,
   InformationCircleOutline,
 } from "react-ionicons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -417,7 +418,14 @@ const Classroom = () => {
               classroomID={classroom.id}
               updateClassName={updateClassName}
             />
-
+            <div className="flex flex-row justify-self-end py-1 px-2 rounded bg-gray-500 hover:bg-gray-400 cursor-pointer">
+              <AddCircleOutline
+                color="#ffffff"
+                height="20px"
+                width="20px"
+              />
+              <p className="text-sm text-white pl-2"><Link href={"/teacher/bulk/" + classroom.code}>Create and Add Students</Link></p>
+            </div>
             <StudentJoinInfo code={classroom.code} />
             <SettingsMenu {...{ classroom, changeStatus, deleteClass }} />
           </div>
